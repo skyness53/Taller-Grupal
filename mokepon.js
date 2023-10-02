@@ -20,13 +20,13 @@ const ataquesDelJugador = document.getElementById('ataques-del-jugador')
 const ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
 const contenedorTarjetas = document.getElementById('contenedorTarjetas')
 
-let mokepones = []
+let pokemon = []
 let ataqueJugador
 let ataqueEnemigo
 let opcionDeMokepones
-let inputCharmander
-let inputSquirtle
-let inputBulbasur
+let inputHipodoge
+let inputCapipepo
+let inputRatigueya
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -39,13 +39,13 @@ class Mokepon {
     }
 }
 
-let charmander = new Mokepon('Charmander', './assets/mokepons_mokepon_hipodoge_attack.png', 5)
+let hipodoge = new Mokepon('Hipodoge', './Charmander.png', 5)
 
-let squirtle = new Mokepon('Squirtle', './assets/mokepons_mokepon_capipepo_attack.png', 5)
+let capipepo = new Mokepon('Capipepo', './Squirtle.png', 5)
 
-let bulbasur = new Mokepon('Bulbusur', './assets/mokepons_mokepon_ratigueya_attack.png', 5)
+let ratigueya = new Mokepon('Ratigueya', './Bulbasaur.png', 5)
 
-charmander.ataques.push(
+hipodoge.ataques.push(
     { nombre: 'ðŸ’§', id: 'boton-agua' },
     { nombre: 'ðŸ’§', id: 'boton-agua' },
     { nombre: 'ðŸ’§', id: 'boton-agua' },
@@ -53,7 +53,7 @@ charmander.ataques.push(
     { nombre: 'ðŸŒ±', id: 'boton-tierra' },
 )
 
-squirtle.ataques.push(
+capipepo.ataques.push(
     { nombre: 'ðŸŒ±', id: 'boton-tierra' },
     { nombre: 'ðŸŒ±', id: 'boton-tierra' },
     { nombre: 'ðŸŒ±', id: 'boton-tierra' },
@@ -62,7 +62,7 @@ squirtle.ataques.push(
     
 )
 
-bulbasur.ataques.push(
+ratigueya.ataques.push(
     { nombre: 'ðŸ”¥', id: 'boton-fuego' },
     { nombre: 'ðŸ”¥', id: 'boton-fuego' },
     { nombre: 'ðŸ”¥', id: 'boton-fuego' },
@@ -70,25 +70,25 @@ bulbasur.ataques.push(
     { nombre: 'ðŸŒ±', id: 'boton-tierra' },
 )
 
-mokepones.push(charmander,squirtle,bulbasur)
+mokepones.push(hipodoge,capipepo,ratigueya)
 
 function iniciarJuego() {
     
     sectionSeleccionarAtaque.style.display = 'none'
 
-    mokepones.forEach((mokepon) => {
+    mokepones.forEach((pokemon) => {
         opcionDeMokepones = `
-        <input type="radio" name="mascota" id=${mokepon.nombre} />
-        <label class="tarjeta-de-mokepon" for=${mokepon.nombre}>
-            <p>${mokepon.nombre}</p>
-            <img src=${mokepon.foto} alt=${mokepon.nombre}>
+        <input type="radio" name="mascota" id=${pokemon.nombre} />
+        <label class="tarjeta-de-mokepon" for=${pokemon.nombre}>
+            <p>${pokemon.nombre}</p>
+            <img src=${pokemon.foto} alt=${pokemon.nombre}>
         </label>
         `
     contenedorTarjetas.innerHTML += opcionDeMokepones
 
-     inputCharmander = document.getElementById('Charmander')
-     inputSquirtle = document.getElementById('Squirtle')
-     inputBulbasur = document.getElementById('Bulbusur')
+     inputHipodoge = document.getElementById('Hipodoge')
+     inputCapipepo = document.getElementById('Capipepo')
+     inputRatigueya = document.getElementById('Ratigueya')
 
     })
     
@@ -115,11 +115,11 @@ function seleccionarMascotaJugador() {
     
     
     if (inputHipodoge.checked) {
-        spanMascotaJugador.innerHTML = 'Charmander'
+        spanMascotaJugador.innerHTML = 'Hipodoge'
     } else if (inputCapipepo.checked) {
-        spanMascotaJugador.innerHTML = 'Squirtle'
+        spanMascotaJugador.innerHTML = 'Capipepo'
     } else if (inputRatigueya.checked) {
-        spanMascotaJugador.innerHTML = 'Bulbusur'
+        spanMascotaJugador.innerHTML = 'Ratigueya'
     } else {
         alert('Selecciona una mascota')
     }
@@ -131,11 +131,11 @@ function seleccionarMascotaEnemigo() {
     let mascotaAleatoria = aleatorio(1,3)
 
     if (mascotaAleatoria == 1) {
-        spanMascotaEnemigo.innerHTML = 'Charmander'
+        spanMascotaEnemigo.innerHTML = 'Hipodoge'
     } else if (mascotaAleatoria == 2) {
-        spanMascotaEnemigo.innerHTML = 'Squirtle'
+        spanMascotaEnemigo.innerHTML = 'Capipepo'
     } else {
-        spanMascotaEnemigo.innerHTML = 'Bulbusur'
+        spanMascotaEnemigo.innerHTML = 'Ratigueya'
     }
 }
 
