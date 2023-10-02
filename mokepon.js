@@ -24,9 +24,9 @@ let mokepones = []
 let ataqueJugador
 let ataqueEnemigo
 let opcionDeMokepones
-let inputHipodoge
-let inputCapipepo
-let inputRatigueya
+let inputCharmander
+let inputSquirtle
+let inputBulbasur
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -39,13 +39,13 @@ class Mokepon {
     }
 }
 
-let hipodoge = new Mokepon('Hipodoge', './assets/mokepons_mokepon_hipodoge_attack.png', 5)
+let charmander = new Mokepon('Charmander', './assets/mokepons_mokepon_hipodoge_attack.png', 5)
 
-let capipepo = new Mokepon('Capipepo', './assets/mokepons_mokepon_capipepo_attack.png', 5)
+let squirtle = new Mokepon('Squirtle', './assets/mokepons_mokepon_capipepo_attack.png', 5)
 
-let ratigueya = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.png', 5)
+let bulbasur = new Mokepon('Bulbusur', './assets/mokepons_mokepon_ratigueya_attack.png', 5)
 
-hipodoge.ataques.push(
+charmander.ataques.push(
     { nombre: 'ðŸ’§', id: 'boton-agua' },
     { nombre: 'ðŸ’§', id: 'boton-agua' },
     { nombre: 'ðŸ’§', id: 'boton-agua' },
@@ -53,7 +53,7 @@ hipodoge.ataques.push(
     { nombre: 'ðŸŒ±', id: 'boton-tierra' },
 )
 
-capipepo.ataques.push(
+squirtle.ataques.push(
     { nombre: 'ðŸŒ±', id: 'boton-tierra' },
     { nombre: 'ðŸŒ±', id: 'boton-tierra' },
     { nombre: 'ðŸŒ±', id: 'boton-tierra' },
@@ -62,7 +62,7 @@ capipepo.ataques.push(
     
 )
 
-ratigueya.ataques.push(
+bulbasur.ataques.push(
     { nombre: 'ðŸ”¥', id: 'boton-fuego' },
     { nombre: 'ðŸ”¥', id: 'boton-fuego' },
     { nombre: 'ðŸ”¥', id: 'boton-fuego' },
@@ -70,7 +70,7 @@ ratigueya.ataques.push(
     { nombre: 'ðŸŒ±', id: 'boton-tierra' },
 )
 
-mokepones.push(hipodoge,capipepo,ratigueya)
+mokepones.push(charmander,squirtle,bulbasur)
 
 function iniciarJuego() {
     
@@ -86,9 +86,9 @@ function iniciarJuego() {
         `
     contenedorTarjetas.innerHTML += opcionDeMokepones
 
-     inputHipodoge = document.getElementById('Hipodoge')
-     inputCapipepo = document.getElementById('Capipepo')
-     inputRatigueya = document.getElementById('Ratigueya')
+     inputCharmander = document.getElementById('Charmander')
+     inputSquirtle = document.getElementById('Squirtle')
+     inputBulbasur = document.getElementById('Bulbusur')
 
     })
     
@@ -115,11 +115,11 @@ function seleccionarMascotaJugador() {
     
     
     if (inputHipodoge.checked) {
-        spanMascotaJugador.innerHTML = 'Hipodoge'
+        spanMascotaJugador.innerHTML = 'Charmander'
     } else if (inputCapipepo.checked) {
-        spanMascotaJugador.innerHTML = 'Capipepo'
+        spanMascotaJugador.innerHTML = 'Squirtle'
     } else if (inputRatigueya.checked) {
-        spanMascotaJugador.innerHTML = 'Ratigueya'
+        spanMascotaJugador.innerHTML = 'Bulbusur'
     } else {
         alert('Selecciona una mascota')
     }
@@ -131,11 +131,11 @@ function seleccionarMascotaEnemigo() {
     let mascotaAleatoria = aleatorio(1,3)
 
     if (mascotaAleatoria == 1) {
-        spanMascotaEnemigo.innerHTML = 'Hipodoge'
+        spanMascotaEnemigo.innerHTML = 'Charmander'
     } else if (mascotaAleatoria == 2) {
-        spanMascotaEnemigo.innerHTML = 'Capipepo'
+        spanMascotaEnemigo.innerHTML = 'Squirtle'
     } else {
-        spanMascotaEnemigo.innerHTML = 'Ratigueya'
+        spanMascotaEnemigo.innerHTML = 'Bulbusur'
     }
 }
 
